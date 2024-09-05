@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activity 1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<style>
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .arrow-left {
+    left: 10px;
+  }
+
+  .arrow-right {
+    right: 10px;
+  }
+
+  .scene {
+    img {
+
+      position: relative;
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Additional styles for content and images */
+  .content {
+    position: relative;
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .scene img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+<body>
+  <!-- Audio elements for sounds  -->
+
+ 
+  <audio id="all" src="./sounds/all.mp3"></audio>
+  <audio id="lost" src="./sounds/lost.mp3"></audio>
+  <audio id="look" src="./sounds/look.mp3"></audio>
+  <audio id="hello" src="./sounds/hello.mp3"></audio>
+  <audio id="yellow" src="./sounds/yellow.mp3"></audio>
+  <audio id="full" src="./sounds/full.mp3"></audio>
+  <audio id="well" src="./sounds/well.mp3"></audio>
+  <audio id="bell" src="./sounds/bell.mp3"></audio>
+  <audio id="ball" src="./sounds/ball.mp3"></audio>
+  <audio id="still" src="./sounds/still.mp3"></audio>
+  <audio id="lunch" src="./sounds/lunch.mp3"></audio>
+  <audio id="leaf" src="./sounds/leaf.mp3"></audio>
+  <audio id="large" src="./sounds/large.mp3"></audio>
+  <audio id="leg" src="./sounds/leg.mp3"></audio>
+  <audio id="slept" src="./sounds/slept.mp3"></audio>
+  <audio id="played" src="./sounds/played.mp3"></audio>
+  <audio id="loved" src="./sounds/loved.mp3"></audio>
+  <audio id="La-La-La" src="./sounds/La-La-La.mp3"></audio>
+  <audio id="l-sound" src="./sounds/l-sound.mp3"></audio>
+  <audio id="LL-sound" src="./sounds/LL-sound.mp3"></audio>
+  <audio id="phone" src="./sounds/phone.mp3"></audio>
+
+
+
+  
+
+  <!--    
+  <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <img   src="header.png" alt="Logo" class="logo logo2" >
+    </header>  
+-->
+  <div class="header">
+    <img src="Logo.png" alt="Logo" class="logo" />
+    <img src="header.png" alt="Header Image" class="header-img" />
+  </div>
+
+  <div class="content">
+    <!-- SCENE 1 -->
+    <div class="scene" id="scene1">
+      <img src="1.png" alt="Scene 1 Image" />
+      <div class="text"></div>
+    </div>
+
+    <!-- SCENE 2 -->
+    <div class="scene hidden" id="scene2">
+      <img src="2.png" alt="Scene 2 Image" />
+      <div class="text"></div>
+    </div>
+
+    <!-- SCENE 3 -->
+    <div class="scene hidden" id="scene3">
+      <img src="3.png" alt="Scene 3 Image" />
+      <div class="text">
+        <!-- <li><button onclick="playSound('wooosh')">Wooosh</button></li> -->
+
+      </div>
+    </div>
+
+    <!-- SCENE 4 -->
+    <div class="scene hidden" id="scene4">
+      <img src="4.png" alt="Scene 4 Image" />
+      <div class="text">
+        <li><button onclick="playSound('La-La-La')">La-La-La</button></li>
+
+      </div>
+    </div>
+
+    <!-- SCENE 5 -->
+    <div class="scene hidden" id="scene5">
+      <img src="5.png" alt="Scene 5 Image" />
+      <div class="text">
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 6 -->
+  <div class="scene hidden" id="scene6">
+    <img src="6.png" alt="Scene 6 Image" />
+    <div class="text">
+   
+
+    </div>
+  </div>
+
+  <!-- SCENE 7 -->
+  <div class="scene hidden" id="scene7">
+    <img src="7.png" alt="Scene 7 Image" />
+    <div class="text">
+    </div>
+  </div>
+
+  <!-- SCENE 8 -->
+  <div class="scene hidden" id="scene8">
+    <img src="8.png" alt="Scene 8 Image" />
+    <div class="text">
+      <div class="text">
+        <li><button onclick="playSound('l-sound')">L</button></li>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 9 -->
+  <div class="scene hidden" id="scene9">
+    <img src="9.png" alt="Scene 9 Image" />
+    <div class="text">
+      <li><button onclick="playSound('loved')">LOVED</button></li>
+    </div>
+  </div>
+
+  <!-- SCENE 10 -->
+  <div class="scene hidden" id="scene10">
+    <img src="10.png" alt="Scene 10 Image" />
+    <div class="text">
+   
+      <li><button onclick="playSound('played')">PLAYED</button></li>
+      
+
+    </div>
+  </div>
+
+  <!-- SCENE 11 -->
+  <div class="scene hidden" id="scene11">
+    <img src="11.png" alt="Scene 11 Image" />
+    <div class="text">
+      <li><button onclick="playSound('slept')">SLEPT</button></li>
+    
+    </div>
+  </div>
+
+  <!-- SCENE 12 -->
+  <div class="scene hidden" id="scene12">
+    <img src="12.png" alt="Scene 12 Image" />
+    <div class="text">
+      <div class="text">
+      
+        <li><button onclick="playSound('leg')">Leg</button></li>
+        <li><button onclick="playSound('large')">Large</button></li>
+        <li><button onclick="playSound('leaf')">Leaf</button></li>
+        <li><button onclick="playSound('lunch')">Lunch</button></li>
+
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 13 -->
+  <div class="scene hidden" id="scene13">
+    <img src="13.png" alt="Scene 13 Image" />
+    <div class="text">
+    </div>
+  </div>
+
+  <!-- SCENE 14 -->
+  <div class="scene hidden" id="scene14">
+    <img src="14.png" alt="Scene 14 Image" />
+    <div class="text">
+    </div>
+  </div>
+
+  <!-- SCENE 15 -->
+  <div class="scene hidden" id="scene15">
+    <img src="15.png" alt="Scene 15 Image" />
+    <div class="text">
+      <li><button onclick="playSound('l-sound')">LL</button></li>
+
+    </div>
+  </div>
+
+  <!-- SCENE 16 -->
+  <div class="scene hidden" id="scene16">
+    <img src="16.png" alt="Scene 16 Image" />
+    <div class="text">
+      <div class="text">
+        <li><button onclick="playSound('still')">still</button></li>
+       
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 17 -->
+  <div class="scene hidden" id="scene17">
+    <img src="17.png" alt="Scene 17 Image" />
+    <div class="text">
+    
+      <!-- <li><button onclick="playSound('under')">Under</button></li> -->
+
+    </div>
+  </div>
+
+  <!-- SCENE 18 -->
+  <div class="scene hidden" id="scene18">
+    <img src="18.png" alt="Scene 18 Image" />
+    <div class="text">
+  
+      <!-- <li><button onclick="playSound('tree-house')">Tree-house</button></li> -->
+    </div>
+  </div>
+
+  <!-- SCENE 19 -->
+  <div class="scene hidden" id="scene19">
+    <img src="19.png" alt="Scene 19 Image" />
+    <div class="text">
+      <li><button onclick="playSound('ball')">Ball</button></li>
+
+      <li><button onclick="playSound('bell')">Bell</button></li>
+
+
+    </div>
+  </div>
+
+  <!-- SCENE 20 -->
+  <div class="scene hidden" id="scene20">
+    <img src="20.png" alt="Scene 20 Image" />
+    <div class="text">
+    
+
+
+    </div>
+  </div>
+
+  <!-- SCENE 21 -->
+  <div class="scene hidden" id="scene20">
+    <img src="21.png" alt="Scene 21 Image" />
+    <div class="text">
+      <li><button onclick="playSound('well')">Well</button></li>
+      <li><button onclick="playSound('full')">Full</button></li>
+
+
+    </div>
+  </div>
+
+  <!-- SCENE 22 -->
+  <div class="scene hidden" id="scene19">
+    <img src="22.png" alt="Scene 22 Image" />
+    <div class="text">
+    
+    </div>
+  </div>
+
+  <!-- SCENE 23 -->
+  <div class="scene hidden" id="scene23">
+    <img src="23.png" alt="Scene 23 Image" />
+    <div class="text">
+      <li><button onclick="playSound('yellow')">Yellow</button></li>
+      <li><button onclick="playSound('hello')">Hello</button></li>
+
+    </div>
+  </div>
+
+  <!-- SCENE 24 -->
+  <div class="scene hidden" id="scene24">
+    <img src="24.png" alt="Scene 24 Image" />
+    <div class="text">
+      <!-- <li><button onclick="playSound('phone')">Phone</button></li> -->
+
+      <!-- <li><button onclick="playSound('shovels')">Shovels</button></li> -->
+    </div>
+  </div>
+
+  <!-- SCENE 25 -->
+  <div class="scene hidden" id="scene25">
+    <img src="25.png" alt="Scene 25 Image" />
+    <div class="text">
+
+
+      <!-- <li><button onclick="playSound('something')">something</button></li> -->
+    </div>
+  </div>
+
+  <!-- SCENE 26 -->
+  <div class="scene hidden" id="scene26">
+    <img src="26.png" alt="Scene 26 Image" />
+    <div class="text">
+      <li><button onclick="playSound('look')">Look</button></li>
+      <li><button onclick="playSound('lost')">Lost</button></li>
+
+    </div>
+  </div>
+
+  <!-- SCENE 27 -->
+  <div class="scene hidden" id="scene27">
+    <img src="27.png" alt="Scene 27 Image" />
+    <div class="text">
+      <li><button onclick="playSound('still')">Still</button></li>
+      <li><button onclick="playSound('all')">All</button></li>
+      <li><button onclick="playSound('well')">Well</button></li>
+
+
+
+    </div>
+  </div>
+
+  <!-- SCENE 28 -->
+  <div class="scene hidden" id="scene28">
+    <img src="28.png" alt="Scene 28 Image" />
+    <div class="text">
+  
+
+    </div>
+  </div>
+
+  <!-- SCENE 29 -->
+  <div class="scene hidden" id="scene29">
+    <img src="29.png" alt="Scene 29 Image" />
+    <div class="text" style="text-align: center;">
+      <!-- <div style="display: flex; justify-content: center;align-items: center;">
+        <li><button onclick="playSound('but')">But</button></li>
+        -
+        <li><button onclick="playSound('ter')">ter</button></li>
+        -
+        <li><button onclick="playSound('fly')">fly</button></li>
+      </div> -->
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="arrow arrow-left" onclick="prevScene()">&#9664;</div>
+  <div class="arrow arrow-right" onclick="nextScene()">&#9654;</div>
+
+
+  <div class="navigation">
+    <button id="prevBtn" onclick="prevScene()">Back</button>
+    <button id="nextBtn" onclick="nextScene()">Next</button>
+  </div>
+  </div>
+
+  <script>
+    // function speak(text) {
+    //     const speech = new SpeechSynthesisUtterance(text);
+    //     speech.pitch = 1;
+    //     speech.rate = 1;
+    //     speech.volume = 1;
+    //     window.speechSynthesis.speak(speech);
+    // }
+    function playSound(soundId) {
+      var audio = document.getElementById(soundId);
+      if (audio) {
+        audio.play();
+      }
+    }
+
+    function playOuSound() {
+      const ouSound = document.getElementById("ouSound");
+      ouSound.play();
+    }
+
+    function speak(text) {
+      if (text === "ou") {
+        const ouSound = document.getElementById("ouSound");
+        ouSound.play();
+      } else {
+        const speech = new SpeechSynthesisUtterance(text);
+        speech.pitch = 1;
+        speech.rate = 1;
+        speech.volume = 1;
+
+        // Get available voices and select an American one if available
+        const voices = window.speechSynthesis.getVoices();
+        const americanVoice = voices.find(
+          (voice) =>
+            voice.name.includes("US") || voice.name.includes("American")
+        );
+        if (americanVoice) {
+          speech.voice = americanVoice;
+        }
+
+        window.speechSynthesis.speak(speech);
+      }
+    }
+
+    let currentScene = 1;
+
+    function showScene(sceneNumber) {
+      document.querySelectorAll(".scene").forEach((scene, index) => {
+        scene.classList.toggle("hidden", index !== sceneNumber - 1);
+      });
+    }
+
+    function nextScene() {
+      if (currentScene < 29) {
+        currentScene++;
+        showScene(currentScene);
+      }
+    }
+
+    function prevScene() {
+      if (currentScene > 1) {
+        currentScene--;
+        showScene(currentScene);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      showScene(currentScene);
+    });
+  </script>
+</body>
+
+</html>
